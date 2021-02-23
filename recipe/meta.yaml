@@ -1,4 +1,4 @@
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,12 +11,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ggsignif_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ggsignif/ggsignif_{{ version }}.tar.gz
-  sha256: 6fe13efda31386483e64d466ba2f5a53a2a235ae04f5c17bba3ccc63d283499e
+  sha256: 506e684071332dac62005c709833d419f4944a85478e2f4395f218ac314f5e66
 
 build:
   noarch: generic
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -39,14 +39,10 @@ test:
 about:
   home: https://github.com/const-ae/ggsignif
   license: GPL-3
-  summary: Enrich your 'ggplots' with group-wise comparisons. This package provides an easy way
-    to indicate if two groups are significantly different. Commonly this is shown by
-    a bracket on top connecting the groups of interest which itself is annotated with
-    the level of significance (NS, *, **, ***). The package provides a single layer
-    (geom_signif()) that takes the groups for comparison and the test (t.test(), wilcox.text()
-    etc.) as arguments and adds the annotation to the plot.
+  summary: Enrich your 'ggplots' with group-wise comparisons. This package provides an easy way to indicate if two groups are significantly different. Commonly this is shown by a bracket on top connecting the groups of interest which itself is annotated with the level of significance (NS, *, **, ***). The package provides
+    a single layer (geom_signif()) that takes the groups for comparison and the test (t.test(), wilcox.text() etc.) as arguments and adds the annotation to the plot.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
