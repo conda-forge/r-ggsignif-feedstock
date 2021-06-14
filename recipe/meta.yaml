@@ -1,4 +1,4 @@
-{% set version = "0.6.1" %}
+{% set version = "0.6.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,7 +11,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ggsignif_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ggsignif/ggsignif_{{ version }}.tar.gz
-  sha256: 506e684071332dac62005c709833d419f4944a85478e2f4395f218ac314f5e66
+  sha256: 41ab291127e48fe3bee6301edd893b1ebaa064005971d4ecbfa3a1687e1b3fa3
 
 build:
   noarch: generic
